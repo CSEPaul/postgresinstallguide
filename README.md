@@ -89,4 +89,29 @@ https://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS3UbuntuPGSQLApt
 
 https://packagecloud.io/timescale/timescaledb
 
-Adminer Setup
+# Adminer Setup
+A very useful database UI tool
+Best off setting it up on its own container 
+2GB
+Ubuntu Latest 
+
+## PHP Install 
+
+`apt install apache2 php php-fpm php-curl libapache2-mod-php php-cli php-mysql php-gd -y`
+
+
+## Apache Install
+
+`systemctl enable --now apache2`
+
+`systemctl status apache2`
+
+## Adminer Install
+
+`apt install adminer -y`
+
+`a2enconf php*-fpm`
+
+`a2enconf adminer`
+
+`systemctl restart apache2`
