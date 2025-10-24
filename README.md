@@ -1,2 +1,2 @@
-# postgresinstallguide
+# Postgresinstallguide
 Documentation on Postgresql Installation
