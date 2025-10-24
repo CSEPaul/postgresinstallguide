@@ -1,4 +1,4 @@
-# Postgresinstallguide
+# Postgresql Install Guide
 Documentation on Postgresql Installation
 
 Ubuntu Noble 24.04
