@@ -81,6 +81,8 @@ https://packagecloud.io/timescale/timescaledb - contains scripts for each type
 
 `sudo timescaledb-tune`
 
+
+
 ## PostGis - available under generic Ubuntu Repo's
 
 `apt search postgresql-17 | grep postgis`
@@ -110,27 +112,30 @@ https://packagecloud.io/timescale/timescaledb - contains scripts for each type
 
 `GRANT ALL PRIVILEGESS ON DATABASE mydb TO myuser;`
 
-
 ## Install extension to mydb
 Log in as new user
 
 `psql -d "postgres://myuser:myuserpassword@127.0.0.1:5432/mydb"`
 
+TimeScaleDB
 `CREATE EXTENSION IF NOT EXISTS timescaledb;`
 
 `ALTER DATABASE mydb SET search_path=public,postgis,contrib;`
 
 `\connect mydb;`
 
+PostGis
 `CREATE SCHEMA postgis;`
 
 `CREATE EXTENSION postgis SCHEMA postgis;`
 
 `SELECT postgis_full_version();`
 
+PGrouting
 `CREATE  EXTENSION pgrouting SCHEMA postgis;`
 
 `SELECT * FROM pgr_version();`
+
 
 
 #### Useful Links
