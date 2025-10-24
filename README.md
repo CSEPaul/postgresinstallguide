@@ -117,7 +117,7 @@ Log in as new user
 
 `psql -d "postgres://myuser:myuserpassword@127.0.0.1:5432/mydb"`
 
-<u>TimeScaleDB</u>
+<strong>TimeScaleDB</strong>
 
 `CREATE EXTENSION IF NOT EXISTS timescaledb;`
 
@@ -125,7 +125,7 @@ Log in as new user
 
 `\connect mydb;`
 
-PostGis
+<strong>PostGis</strong>
 
 `CREATE SCHEMA postgis;`
 
@@ -133,7 +133,7 @@ PostGis
 
 `SELECT postgis_full_version();`
 
-PGrouting
+<strong>PGrouting</strong>
 
 `CREATE  EXTENSION pgrouting SCHEMA postgis;`
 
