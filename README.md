@@ -47,6 +47,7 @@ Is from their site only
 We need to add their repo's and pull from those directly. 
 Review this page - 
 https://docs.tigerdata.com/self-hosted/latest/install/installation-linux/ 
+https://packagecloud.io/timescale/timescaledb - contains scripts for each type 
 
 
 `sudo apt install timescaledb-2-postgresql-17 postgresql-client-17`
@@ -85,5 +86,7 @@ https://harish2k01.in/create-and-delete-users-in-proxmox-lxc/
 https://www.tigerdata.com/blog/top-8-postgresql-extensions
 
 https://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS3UbuntuPGSQLApt
+
+https://packagecloud.io/timescale/timescaledb
 
 Adminer Setup
