@@ -13,13 +13,13 @@ If working on a container - remember to add a User with sudo permissions rather 
 
 
 
-1. Ubuntu Prepare 
+## Ubuntu Prepare 
 
 `apt get update`
 
 `apt list --upgradable`
 
-2. Postgresql Install
+## Postgresql Install
 
 `sudo apt install gnupg postgresql-common apt-transport-https lsb-release wget`
 
@@ -42,7 +42,8 @@ Change
 `reboot`
 
 
-TimeScaleDB Installation is from their site only
+## TimeScaleDB Installation 
+Is from their site only
 We need to add their repo's and pull from those directly. 
 Review this page - 
 https://docs.tigerdata.com/self-hosted/latest/install/installation-linux/ 
@@ -52,7 +53,7 @@ https://docs.tigerdata.com/self-hosted/latest/install/installation-linux/
 
 `sudo timescaledb-tune`
 
-PostGis - available under generic Ubuntu Repo's
+## PostGis - available under generic Ubuntu Repo's
 
 `apt search postgresql-17 | grep postgis`
 
@@ -60,7 +61,7 @@ PostGis - available under generic Ubuntu Repo's
 
 `sudo systemctl restart postgresql`
 
- PGRouting - available under generic Ubuntu Repo's
+## PGRouting - available under generic Ubuntu Repo's
 
 `apt search postgresql-17 | grep pgrouting`
 
