@@ -37,6 +37,32 @@ Change
 
 `listen_addresses='localhost'` to  `listen_addresses = '*'`
 
+Edit the pg_hba.conf file - Log postgres
+
+`sudo -u postgres psql`
+
+Ask postgres where the file is
+
+`SHOW hba_file;`
+
+CD to that directory i.e.
+
+`cd /etc/postgresql/17/main/ `
+
+`nano pg_hba.conf`
+
+Edit the file as follows. 
+
+Add the following line as the first line of pg_hba.conf. It allows access to all databases for all users with an encrypted password:
+
+# TYPE DATABASE USER CIDR-ADDRESS  METHOD
+host  all  all 0.0.0.0/0 scram-sha-256
+
+`service postgresql restart`
+
+
+Edit the firewall
+
 `sudo ufw allow 5432/tcp`
 
 `reboot`
@@ -71,6 +97,39 @@ https://packagecloud.io/timescale/timescaledb - contains scripts for each type
 `sudo systemctl restart postgresql`
 
 
+
+## Create Database and User
+`sudo -u postgres psql`
+
+`CREATE DATABASE mydb;`
+
+`CREATE USER myuser WITH ENCRYPTED PASSWORD 'mypass';`
+
+`ALTER USER myuser WITH SUPERUSER;`
+
+`GRANT ALL PRIVILEGESS ON DATABASE mydb TO myuser;`
+
+
+## Install extension to mydb
+Log in as new user
+
+`psql -d "postgres://myuser:myuserpassword@127.0.0.1:5432/mydb"`
+
+`CREATE EXTENSION IF NOT EXISTS timescaledb;`
+
+`ALTER DATABASE mydb SET search_path=public,postgis,contrib;`
+
+`\connect mydb;`
+
+`CREATE SCHEMA postgis;`
+
+`CREATE EXTENSION postgis SCHEMA postgis;`
+
+`SELECT postgis_full_version();`
+
+`CREATE  EXTENSION pgrouting SCHEMA postgis;`
+
+`SELECT * FROM pgr_version();`
 
 
 #### Useful Links
@@ -115,3 +174,6 @@ Ubuntu Latest
 `a2enconf adminer`
 
 `systemctl restart apache2`
+
+
+
