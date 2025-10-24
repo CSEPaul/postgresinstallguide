@@ -117,7 +117,7 @@ Log in as new user
 
 `psql -d "postgres://myuser:myuserpassword@127.0.0.1:5432/mydb"`
 
-TimeScaleDB
+<u>TimeScaleDB</u>
 
 `CREATE EXTENSION IF NOT EXISTS timescaledb;`
 
