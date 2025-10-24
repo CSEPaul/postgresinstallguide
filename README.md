@@ -19,14 +19,18 @@ If working on a container - remember to add a User with sudo permissions rather 
 `apt list --upgradable`
 
 2. Postgresql Install
+
 `sudo apt install gnupg postgresql-common apt-transport-https lsb-release wget`
 `sudo apt install postgresql-17`
 `sudo systemctl start postgresql`
 `sudo systemctl enable postgresql`
 
 If you need to open Postgresql for connections outside of localhost the conf file needs to be edited to permit access. 
+
 `sudo nano /etc/postgresql/17/main/postgresql.conf`
+
 Change 
+
 `listen_addresses='localhost'` to  `listen_addresses = '*'`
 `sudo ufw allow 5432/tcp`
 `reboot`
@@ -42,13 +46,19 @@ https://docs.tigerdata.com/self-hosted/latest/install/installation-linux/
 `sudo timescaledb-tune`
 
 PostGis - available under generic Ubuntu Repo's
+
 `apt search postgresql-17 | grep postgis`
+
 `apt install postgresql-17-postgis-3/noble-pgdg`
+
 `sudo systemctl restart postgresql`
 
  PGRouting - available under generic Ubuntu Repo's
+
 `apt search postgresql-17 | grep pgrouting`
+
 `apt install postgresql-17-pgrouting/noble-pgdg`
+
 `sudo systemctl restart postgresql`
 
 
@@ -57,10 +67,15 @@ PostGis - available under generic Ubuntu Repo's
 #### Useful Links
 
 https://dev.to/johndotowl/postgresql-17-installation-on-ubuntu-2404-5bfi
+
 https://docs.tigerdata.com/self-hosted/latest/install/installation-linux/
+
 https://www.prisma.io/docs/orm/more/help-and-troubleshooting/dataguide/connecting-to-postgresql-databases
+
 https://harish2k01.in/create-and-delete-users-in-proxmox-lxc/
+
 https://www.tigerdata.com/blog/top-8-postgresql-extensions
+
 https://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS3UbuntuPGSQLApt
 
 Adminer Setup
